@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`__getPath should have a path item when arc is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -14,8 +14,8 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "anticlockwise": true,
       "endAngle": 5,
       "radius": 3,
@@ -23,7 +23,7 @@ Array [
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -37,10 +37,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when arcTo is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -50,15 +50,15 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "cpx1": 1,
       "cpx2": 3,
       "cpy1": 2,
       "cpy2": 4,
       "radius": 5,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -72,10 +72,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when bezierCurveTo is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -85,8 +85,8 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "cpx1": 1,
       "cpx2": 3,
       "cpy1": 2,
@@ -94,7 +94,7 @@ Array [
       "x": 5,
       "y": 6,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -108,10 +108,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when clip is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -121,14 +121,14 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "height": 4,
       "width": 3,
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -138,13 +138,13 @@ Array [
     ],
     "type": "rect",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "fillRule": "nonzero",
-      "path": Array [
-        Object {
-          "props": Object {},
-          "transform": Array [
+      "path": [
+        {
+          "props": {},
+          "transform": [
             1,
             0,
             0,
@@ -154,14 +154,14 @@ Array [
           ],
           "type": "beginPath",
         },
-        Object {
-          "props": Object {
+        {
+          "props": {
             "height": 4,
             "width": 3,
             "x": 1,
             "y": 2,
           },
-          "transform": Array [
+          "transform": [
             1,
             0,
             0,
@@ -173,7 +173,7 @@ Array [
         },
       ],
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -187,10 +187,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when clip is called with a fillRule 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -200,14 +200,14 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "height": 4,
       "width": 3,
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -217,13 +217,13 @@ Array [
     ],
     "type": "rect",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "fillRule": "evenodd",
-      "path": Array [
-        Object {
-          "props": Object {},
-          "transform": Array [
+      "path": [
+        {
+          "props": {},
+          "transform": [
             1,
             0,
             0,
@@ -233,14 +233,14 @@ Array [
           ],
           "type": "beginPath",
         },
-        Object {
-          "props": Object {
+        {
+          "props": {
             "height": 4,
             "width": 3,
             "x": 1,
             "y": 2,
           },
-          "transform": Array [
+          "transform": [
             1,
             0,
             0,
@@ -252,7 +252,7 @@ Array [
         },
       ],
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -266,10 +266,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when clip is called with a path 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -279,12 +279,12 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "fillRule": "nonzero",
-      "path": Array [
-        Object {
-          "props": Object {
+      "path": [
+        {
+          "props": {
             "anticlockwise": false,
             "endAngle": 6.283185307179586,
             "radius": 10,
@@ -292,7 +292,7 @@ Array [
             "x": 100,
             "y": 101,
           },
-          "transform": Array [
+          "transform": [
             1,
             0,
             0,
@@ -304,7 +304,7 @@ Array [
         },
       ],
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -318,10 +318,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when clip is called with a path 2`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -331,12 +331,12 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "fillRule": "evenodd",
-      "path": Array [
-        Object {
-          "props": Object {
+      "path": [
+        {
+          "props": {
             "anticlockwise": false,
             "endAngle": 6.283185307179586,
             "radius": 10,
@@ -344,7 +344,7 @@ Array [
             "x": 100,
             "y": 101,
           },
-          "transform": Array [
+          "transform": [
             1,
             0,
             0,
@@ -356,7 +356,7 @@ Array [
         },
       ],
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -370,10 +370,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when closePath is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -383,9 +383,9 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {},
-    "transform": Array [
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -399,10 +399,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when ellipse is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -412,8 +412,8 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "anticlockwise": true,
       "endAngle": 7,
       "radiusX": 3,
@@ -423,7 +423,7 @@ Array [
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -437,10 +437,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when lineTo is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -450,12 +450,12 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -469,10 +469,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when moveTo is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -482,12 +482,12 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -501,10 +501,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when quadraticCurveTo is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -518,10 +518,10 @@ Array [
 `;
 
 exports[`__getPath should have a path item when rect is called 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -531,14 +531,14 @@ Array [
     ],
     "type": "beginPath",
   },
-  Object {
-    "props": Object {
+  {
+    "props": {
       "height": 4,
       "width": 3,
       "x": 1,
       "y": 2,
     },
-    "transform": Array [
+    "transform": [
       1,
       0,
       0,
@@ -552,10 +552,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when arc is called with a non-finite number 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -569,10 +569,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when arcTo is called with a non-finite number 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -586,10 +586,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when bezierCurveTo is called with a non-finite number 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -603,10 +603,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when ellipse is called with non-finite numbers 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -620,10 +620,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when lineTo is called with non-finite values 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -637,10 +637,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when moveTo is called with non-finite values 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -654,10 +654,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when quadraticCurveTo is called with non-finite values 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -671,10 +671,10 @@ Array [
 `;
 
 exports[`__getPath should not have a path item when rect is called with non-finite values 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,
@@ -688,10 +688,10 @@ Array [
 `;
 
 exports[`__getPath should reset the path with beginPath 1`] = `
-Array [
-  Object {
-    "props": Object {},
-    "transform": Array [
+[
+  {
+    "props": {},
+    "transform": [
       1,
       0,
       0,

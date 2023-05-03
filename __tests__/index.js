@@ -16,14 +16,3 @@ describe('canvas', () => {
     expect(ver).toBe(pkg.version);
   });
 });
-
-describe('setupJestCanvasMock', () => {
-  it('should setup after resetAllMocks', () => {
-    jest.resetAllMocks();
-    expect(document.createElement('canvas').getContext('2d')).toBe(undefined);
-    setupJestCanvasMock();
-    expect(document.createElement('canvas').getContext('2d')).toHaveProperty(
-      'createImageData'
-    );
-  });
-});

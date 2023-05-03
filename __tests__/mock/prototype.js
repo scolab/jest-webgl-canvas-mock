@@ -139,5 +139,4 @@ describe('mock', () => {
     const second = canvas.getContext("experimental-webgl");
     expect(first).toBe(second);
   });
-
 });
