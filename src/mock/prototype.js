@@ -13,19 +13,19 @@ export default function mockPrototype() {
    * value of getContext. It attempts to preserve the original getContext function by storing it on
    * the callback as a property.
    */
-  const getContext2D = jest.fn(function getContext2d(type) {
+  const getContext2D = jest.fn(function getContext2d(type, options) {
     if (type === '2d') {
       /**
        * Contexts must be idempotent. Once they are generated, they should be returned when
        * getContext() is called on the same canvas object multiple times.
        */
       if (generatedContexts.has(this)) return generatedContexts.get(this);
-      const ctx = new CanvasRenderingContext2D(this);
+      const ctx = new CanvasRenderingContext2D(this, options);
       generatedContexts.set(this, ctx);
       return ctx;
     } else if (type === 'webgl' || type === 'experimental-webgl') {
       if (generatedContexts.has(this)) return generatedContexts.get(this);
-      const ctx = new WebGLRenderingContext(this);
+      const ctx = new WebGLRenderingContext(this, options);
       generatedContexts.set(this, ctx);
       return ctx;
     }
