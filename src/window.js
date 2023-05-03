@@ -62,18 +62,20 @@ export default (win) => {
   if (!win.HTMLVideoElement) win.HTMLVideoElement = Image;
 
   // WebGL 1.0
-  if (!win.WebGLRenderingContext) win.WebGLRenderingContext = WebGLRenderingContext;
-  if (!win.WebGLActiveInfo) win.WebGLActiveInfo = function() {};
-  if (!win.WebGLBuffer) win.WebGLBuffer = function() {};
-  if (!win.WebGLContextEvent) win.WebGLContextEvent = function() {};
-  if (!win.WebGLFramebuffer) win.WebGLFramebuffer = function() {};
-  if (!win.WebGLProgram) win.WebGLProgram = function() {};
-  if (!win.WebGLQuery) win.WebGLQuery = function() {};
-  if (!win.WebGLRenderbuffer) win.WebGLRenderbuffer = function() {};
-  if (!win.WebGLShader) win.WebGLShader = function() {};
-  if (!win.WebGLShaderPrecisionFormat) win.WebGLShaderPrecisionFormat = function() {};
-  if (!win.WebGLTexture) win.WebGLTexture = function() {};
-  if (!win.WebGLUniformLocation) win.WebGLUniformLocation = function() {};
+  if (!win.WebGLRenderingContext)
+    win.WebGLRenderingContext = WebGLRenderingContext;
+  if (!win.WebGLActiveInfo) win.WebGLActiveInfo = function () {};
+  if (!win.WebGLBuffer) win.WebGLBuffer = function () {};
+  if (!win.WebGLContextEvent) win.WebGLContextEvent = function () {};
+  if (!win.WebGLFramebuffer) win.WebGLFramebuffer = function () {};
+  if (!win.WebGLProgram) win.WebGLProgram = function () {};
+  if (!win.WebGLQuery) win.WebGLQuery = function () {};
+  if (!win.WebGLRenderbuffer) win.WebGLRenderbuffer = function () {};
+  if (!win.WebGLShader) win.WebGLShader = function () {};
+  if (!win.WebGLShaderPrecisionFormat)
+    win.WebGLShaderPrecisionFormat = function () {};
+  if (!win.WebGLTexture) win.WebGLTexture = function () {};
+  if (!win.WebGLUniformLocation) win.WebGLUniformLocation = function () {};
 
   mockPrototype();
 

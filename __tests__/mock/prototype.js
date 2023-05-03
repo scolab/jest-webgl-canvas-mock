@@ -1,4 +1,4 @@
-import WebGLRenderingContext from "../../src/classes/WebGLRenderingContext";
+import WebGLRenderingContext from '../../src/classes/WebGLRenderingContext';
 
 let canvas;
 let otherCanvas;
@@ -129,14 +129,14 @@ describe('mock', () => {
   });
 
   it('should return the same context if getContext("webgl") is called twice', () => {
-    const first = canvas.getContext("webgl");
-    const second = canvas.getContext("webgl");
+    const first = canvas.getContext('webgl');
+    const second = canvas.getContext('webgl');
     expect(first).toBe(second);
   });
 
   it('should return the same context if getContext("experimental-webgl") is called twice', () => {
-    const first = canvas.getContext("experimental-webgl");
-    const second = canvas.getContext("experimental-webgl");
+    const first = canvas.getContext('experimental-webgl');
+    const second = canvas.getContext('experimental-webgl');
     expect(first).toBe(second);
   });
 });

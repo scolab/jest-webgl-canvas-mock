@@ -1,5 +1,5 @@
-import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D";
-import WebGLRenderingContext from "../classes/WebGLRenderingContext";
+import CanvasRenderingContext2D from '../classes/CanvasRenderingContext2D';
+import WebGLRenderingContext from '../classes/WebGLRenderingContext';
 
 export default function mockPrototype() {
   /**
