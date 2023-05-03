@@ -1,7 +1,7 @@
 {
-  "name": "jest-canvas-mock",
+  "name": "jest-webgl-canvas-mock",
   "version": "2.5.0",
-  "description": "Mock a canvas in your jest tests.",
+  "description": "Mock both 2D and WebGL contexts in Jest.",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "scripts": {
@@ -54,7 +54,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hustcc/jest-canvas-mock.git"
+    "url": "git+https://github.com/adamfsk/jest-webgl-canvas-mock.git"
   },
   "keywords": [
     "mock",
@@ -63,17 +63,19 @@
     "echarts",
     "canvas",
     "test",
-    "unit"
+    "unit",
+    "stub",
+    "webgl"
   ],
   "files": [
     "CHANGELOG.md",
     "lib/",
     "types/"
   ],
-  "author": "hustcc",
+  "author": "adamfsk",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hustcc/jest-canvas-mock/issues"
+    "url": "https://github.com/adamfsk/jest-webgl-canvas-mock/issues"
   },
-  "homepage": "https://github.com/hustcc/jest-canvas-mock#readme"
+  "homepage": "https://github.com/adamfsk/jest-webgl-canvas-mock#readme"
 }

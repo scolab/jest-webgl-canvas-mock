@@ -1,3 +1,5 @@
+import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D";
+
 export default function mockPrototype() {
   /**
    * This weakmap is designed to contain all of the generated canvas contexts. It's keys are the
