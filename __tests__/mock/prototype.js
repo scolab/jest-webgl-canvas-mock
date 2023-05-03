@@ -116,13 +116,19 @@ describe('mock', () => {
     const error = console.error;
     console.error = () => void 0;
     canvas.dataset.internalRequireTest = true;
-    canvas.getContext('webgl');
+    canvas.getContext('random');
     console.error = error;
   });
 
   it('should return the same context if getContext("2d") is called twice', () => {
     const first = canvas.getContext('2d');
     const second = canvas.getContext('2d');
+    expect(first).toBe(second);
+  });
+
+  it('should return the same context if getContext("webgl") is called twice', () => {
+    const first = canvas.getContext("webgl");
+    const second = canvas.getContext("webgl");
     expect(first).toBe(second);
   });
 });

@@ -1,6 +1,5 @@
 import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D";
 import WebGLRenderingContext from "../classes/WebGLRenderingContext";
-// import HTMLCanvasElement from "../classes/HTMLCanvasElement";
 
 export default function mockPrototype() {
   /**

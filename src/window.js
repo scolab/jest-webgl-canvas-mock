@@ -13,7 +13,6 @@ import TextMetrics from './classes/TextMetrics';
 import ImageBitmap from './classes/ImageBitmap';
 import mockPrototype from './mock/prototype';
 import createImageBitmap from './mock/createImageBitmap';
-import HTMLCanvasElement from './classes/HTMLCanvasElement';
 import Image from './classes/Image';
 import WebGLRenderingContext from './classes/WebGLRenderingContext';
 
@@ -58,7 +57,6 @@ export default (win) => {
   if (!win.ImageBitmap) win.ImageBitmap = ImageBitmap;
   if (!win.createImageBitmap) win.createImageBitmap = createImageBitmap;
 
-  if (!win.HTMLCanvasElement) win.HTMLCanvasElement = HTMLCanvasElement;
   if (!win.Image) win.Image = Image;
   if (!win.HTMLImageElement) win.HTMLImageElement = Image;
   if (!win.HTMLVideoElement) win.HTMLVideoElement = Image;
