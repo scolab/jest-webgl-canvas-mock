@@ -1,16 +1,16 @@
 # jest-webgl-canvas-mock
 
-> Mock `canvas` when run unit test cases with jest. For more browser environment, you can use [jest-electron](https://github.com/hustcc/jest-electron) for real browser runtime.
+> Mock `canvas` and `WebGL` when run unit test cases with jest. For more browser environment, you can use [jest-electron](https://github.com/hustcc/jest-electron) for real browser runtime.
 
-[![Build Status](https://github.com/adamfsk/jest-canvas-mock/workflows/build/badge.svg)](https://github.com/adamfsk/jest-canvas-mock/actions/workflows/build.yml)
-[![Coverage Status](https://coveralls.io/repos/github/hustcc/jest-canvas-mock/badge.svg?branch=master)](https://coveralls.io/github/hustcc/jest-canvas-mock)
-[![npm](https://img.shields.io/npm/v/jest-canvas-mock.svg)](https://www.npmjs.com/package/jest-canvas-mock)
-[![npm](https://img.shields.io/npm/dm/jest-canvas-mock.svg)](https://www.npmjs.com/package/jest-canvas-mock)
-[![Mentioned in Awesome Jest](https://awesome.re/mentioned-badge.svg)](https://github.com/jest-community/awesome-jest)
+[![Build Status](https://github.com/adamfsk/jest-webgl-canvas-mock/workflows/build/badge.svg)](https://github.com/adamfsk/jest-webgl-canvas-mock/actions/workflows/build.yml)
+[![npm](https://img.shields.io/npm/v/jest-webgl-canvas-mock.svg)](https://www.npmjs.com/package/jest-webgl-canvas-mock)
+[![npm](https://img.shields.io/npm/dm/jest-webgl-canvas-mock.svg)](https://www.npmjs.com/package/jest-webgl-canvas-mock)
 
 ## Disclaimer
 
-This project is a simple merge of [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) with [webgl-mock](https://github.com/kbirk/webgl-mock) so that both 2d and webgl contexts can be tested in jest. As such, the only tests provided are those from the original projects. 
+This project is a simple merge of [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) with
+[webgl-mock](https://github.com/kbirk/webgl-mock) so that both 2d and webgl contexts can be tested in jest.
+As such, the only tests provided are those from the original projects.
 
 The current goal of this project is simply to make any tests using `pixi.js` work in jest.
 
@@ -77,7 +77,7 @@ If you reset the jest mocks (for example, with `jest.resetAllMocks()`), you can
 call `setupJestCanvasMock()` to re-create it.
 
 ```
-import { setupJestCanvasMock } from 'jest-canvas-mock';
+import { setupJestCanvasMock } from 'jest-webgl-canvas-mock';
 
 beforeEach(() => {
   jest.resetAllMocks();
