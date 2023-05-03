@@ -24,11 +24,6 @@ describe('mock', () => {
     expect(ctx).toBeInstanceOf(WebGLRenderingContext);
   });
 
-  // it('should expect getContext to be called', () => {
-  //   canvas.getContext('2d');
-  //   expect(canvas.getContext).toBeCalled();
-  // });
-
   it('should have a toBlob function', () => {
     expect(typeof canvas.toBlob).toBe('function');
   });
