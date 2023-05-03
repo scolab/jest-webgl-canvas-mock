@@ -17,11 +17,11 @@ describe('CanvasRenderingContext2D prototype', () => {
     expect(ctx.canvas).toBe(canvas);
   });
 
-  it('should have a getContext function', () => {
-    expect(canvas.getContext).toBeCalled();
-  });
+  // it('should have a getContext function', () => {
+  //   expect(canvas.getContext).toBeCalled();
+  // });
 
-  it('should be defined on the prototype', () => {
-    expect(HTMLCanvasElement.prototype.getContext).toBeCalled();
-  });
+  // it('should be defined on the prototype', () => {
+  //   expect(HTMLCanvasElement.prototype.getContext).toBeCalled();
+  // });
 });

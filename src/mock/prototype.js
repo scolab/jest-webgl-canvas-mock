@@ -13,7 +13,7 @@ export default function mockPrototype() {
    * value of getContext. It attempts to preserve the original getContext function by storing it on
    * the callback as a property.
    */
-  const getContext2D = jest.fn(function getContext2d(type, options) {
+  function getContext(type, options) {
     if (type === '2d') {
       /**
        * Contexts must be idempotent. Once they are generated, they should be returned when
@@ -29,20 +29,12 @@ export default function mockPrototype() {
       generatedContexts.set(this, ctx);
       return ctx;
     }
-    try {
-      if (!this.dataset.internalRequireTest) require('canvas');
-    } catch {
-      return null;
-    }
-    return getContext2D.internal.call(this, type);
-  });
-
-  if (!jest.isMockFunction(HTMLCanvasElement.prototype.getContext)) {
-    getContext2D.internal = HTMLCanvasElement.prototype.getContext;
-  } else {
-    getContext2D.internal = HTMLCanvasElement.prototype.getContext.internal;
+    return getContext.internal.call(this, type, options);
   }
-  HTMLCanvasElement.prototype.getContext = getContext2D;
+
+  getContext.internal = HTMLCanvasElement.prototype.getContext;
+
+  HTMLCanvasElement.prototype.getContext = getContext;
 
   /**
    * This function technically throws SecurityError at runtime, but it cannot be mocked, because
