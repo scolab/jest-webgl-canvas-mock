@@ -65,7 +65,10 @@
     "test",
     "unit",
     "stub",
-    "webgl"
+    "webgl",
+    "pixi",
+    "pixi.js",
+    "pixijs"
   ],
   "files": [
     "CHANGELOG.md",
