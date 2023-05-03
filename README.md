@@ -1,4 +1,4 @@
-# jest-canvas-mock
+# jest-canvas-webgl-mock
 
 > Mock `canvas` when run unit test cases with jest. For more browser environment, you can use [jest-electron](https://github.com/hustcc/jest-electron) for real browser runtime.
 
@@ -7,13 +7,16 @@
 [![npm](https://img.shields.io/npm/v/jest-canvas-mock.svg)](https://www.npmjs.com/package/jest-canvas-mock)
 [![npm](https://img.shields.io/npm/dm/jest-canvas-mock.svg)](https://www.npmjs.com/package/jest-canvas-mock)
 [![Mentioned in Awesome Jest](https://awesome.re/mentioned-badge.svg)](https://github.com/jest-community/awesome-jest)
+## Disclaimer
+
+This project is a simple merge of [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) with [webgl-mock](https://github.com/kbirk/webgl-mock) so that both 2d and webgl contexts can be tested in jest. As such, the only tests provided are those from the original projects. Please feel free to contribute and add any additional functionality required.
 
 ## Install
 
 This should only be installed as a development dependency (`devDependencies`) as it is only designed for testing.
 
 ```bash
-npm i --save-dev jest-canvas-mock
+npm i --save-dev jest-canvas-webgl-mock
 ```
 
 ## Setup
@@ -23,7 +26,7 @@ In your `package.json` under the `jest`, create a `setupFiles` array and add `je
 ```json
 {
   "jest": {
-    "setupFiles": ["jest-canvas-mock"]
+    "setupFiles": ["jest-canvas-webgl-mock"]
   }
 }
 ```
@@ -33,7 +36,7 @@ If you already have a `setupFiles` attribute you can also append `jest-canvas-mo
 ```json
 {
   "jest": {
-    "setupFiles": ["./__setups__/other.js", "jest-canvas-mock"]
+    "setupFiles": ["./__setups__/other.js", "jest-canvas-webgl-mock"]
   }
 }
 ```
@@ -48,9 +51,9 @@ add the `require` statement to an existing setup file.
 `__setups__/canvas.js`
 
 ```js
-import 'jest-canvas-mock';
+import 'jest-canvas-webgl-mock';
 // or
-require('jest-canvas-mock');
+require('jest-canvas-webgl-mock');
 ```
 
 Add that file to your `setupFiles` array:
@@ -198,4 +201,4 @@ canvas.toDataURL.mockReturnValueOnce(
 
 ## License
 
-MIT@[hustcc](https://github.com/hustcc).
+MIT
