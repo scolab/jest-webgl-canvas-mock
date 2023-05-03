@@ -345,7 +345,7 @@ export default class WebGLRenderingContext {
 
     testFuncs.forEach(key => {
       WebGLRenderingContext.prototype[key] = function() {
-        return {};
+        return key === 'getSupportedExtensions' ? [] : {};
       }
     });
 
