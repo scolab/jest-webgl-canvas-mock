@@ -304,7 +304,8 @@ const mockExtensions = {
     'OES_texture_float': {},
     'OES_texture_half_float': {},
     'WEBGL_lose_context': {
-      restoreContext() { }
+      restoreContext() { },
+      loseContext() { }
     },
     'OES_standard_derivatives': {},
     'OES_vertex_array_object': {
