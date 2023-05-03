@@ -1,4 +1,6 @@
 import CanvasRenderingContext2D from "../classes/CanvasRenderingContext2D";
+import WebGLRenderingContext from "../classes/WebGLRenderingContext";
+// import HTMLCanvasElement from "../classes/HTMLCanvasElement";
 
 export default function mockPrototype() {
   /**
@@ -20,6 +22,11 @@ export default function mockPrototype() {
        */
       if (generatedContexts.has(this)) return generatedContexts.get(this);
       const ctx = new CanvasRenderingContext2D(this);
+      generatedContexts.set(this, ctx);
+      return ctx;
+    } else if (type === 'webgl' || type === 'experimental-webgl') {
+      if (generatedContexts.has(this)) return generatedContexts.get(this);
+      const ctx = new WebGLRenderingContext(this);
       generatedContexts.set(this, ctx);
       return ctx;
     }

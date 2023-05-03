@@ -10,7 +10,11 @@
 
 ## Disclaimer
 
-This project is a simple merge of [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) with [webgl-mock](https://github.com/kbirk/webgl-mock) so that both 2d and webgl contexts can be tested in jest. As such, the only tests provided are those from the original projects. Please feel free to contribute and add any additional functionality required.
+This project is a simple merge of [jest-canvas-mock](https://github.com/hustcc/jest-canvas-mock) with [webgl-mock](https://github.com/kbirk/webgl-mock) so that both 2d and webgl contexts can be tested in jest. As such, the only tests provided are those from the original projects. 
+
+The current goal of this project is simply to make any tests using `pixi.js` work in jest.
+
+Please feel free to contribute and add any additional functionality required.
 
 ## Install
 

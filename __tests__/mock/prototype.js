@@ -1,3 +1,5 @@
+import WebGLRenderingContext from "../../src/classes/WebGLRenderingContext";
+
 let canvas;
 
 beforeEach(() => {
@@ -8,6 +10,16 @@ describe('mock', () => {
   it('context creation of type 2d returns CanvasRenderingContext2D', () => {
     const ctx = canvas.getContext('2d');
     expect(ctx).toBeInstanceOf(CanvasRenderingContext2D);
+  });
+
+  it('context creation of type webgl returns WebGLRenderingContext', () => {
+    const ctx = canvas.getContext('webgl');
+    expect(ctx).toBeInstanceOf(WebGLRenderingContext);
+  });
+
+  it('context creation of type experimental-webgl returns WebGLRenderingContext', () => {
+    const ctx = canvas.getContext('experimental-webgl');
+    expect(ctx).toBeInstanceOf(WebGLRenderingContext);
   });
 
   it('should expect getContext to be called', () => {
@@ -93,10 +105,6 @@ describe('mock', () => {
 
   it('should accept image/webp', () => {
     expect(canvas.toDataURL('image/webp')).toMatch(/image\/webp/);
-  });
-
-  it('context creation of any other type returns null', () => {
-    expect(document.createElement('canvas').getContext('webgl')).toBe(null);
   });
 
   /**
