@@ -189,10 +189,10 @@ export default class CanvasRenderingContext2D {
       options;
     if (!path && !id)
       throw new DOMException(
-        'ConstraintError',
         "Failed to execute 'addHitRegion' on '" +
           this.constructor.name +
-          "': Both id and control are null."
+          "': Both id and control are null.",
+        'ConstraintError'
       );
     if (fillRule && fillRule !== 'evenodd' && fillRule !== 'nonzero')
       throw new TypeError(
@@ -247,12 +247,12 @@ export default class CanvasRenderingContext2D {
 
     if (Number(radius) < 0)
       throw new DOMException(
-        'IndexSizeError',
         "Failed to execute 'arc' on '" +
           this.constructor.name +
           "': The radius provided (" +
           radius +
-          ') is negative.'
+          ') is negative.',
+        'IndexSizeError'
       );
 
     const event = createCanvasEvent('arc', getTransformSlice(this), {
@@ -269,8 +269,7 @@ export default class CanvasRenderingContext2D {
 
   arcTo(cpx1, cpy1, cpx2, cpy2, radius) {
     if (arguments.length < 5)
-      throw new DOMException(
-        'IndexSizeError',
+      throw new TypeError(
         "Failed to execute 'arcTo' on '" +
           this.constructor.name +
           "': 5 arguments required, but only " +
@@ -290,12 +289,13 @@ export default class CanvasRenderingContext2D {
     )
       return;
     if (radiusResult < 0)
-      throw new TypeError(
+      throw new DOMException(
         "Failed to execute 'arcTo' on '" +
           this.constructor.name +
           "': The radius provided (" +
           radius +
-          ') is negative.'
+          ') is negative.',
+        'IndexSizeError'
       );
 
     const event = createCanvasEvent('arcTo', getTransformSlice(this), {
@@ -558,8 +558,8 @@ export default class CanvasRenderingContext2D {
       if (image instanceof ImageBitmap) {
         if (image._closed)
           throw new DOMException(
-            'InvalidStateError',
-            "Failed to execute 'createPattern' on 'CanvasRenderingContext2D': The image source is detached."
+            "Failed to execute 'createPattern' on 'CanvasRenderingContext2D': The image source is detached.",
+            'InvalidStateError'
           );
         this._events.push(event);
         return new CanvasPattern();
@@ -621,17 +621,17 @@ export default class CanvasRenderingContext2D {
       );
     if (r0Result < 0)
       throw new DOMException(
-        'IndexSizeError',
         "Failed to execute 'createRadialGradient' on '" +
           this.constructor.name +
-          "': The r0 provided is less than 0."
+          "': The r0 provided is less than 0.",
+        'IndexSizeError'
       );
     if (r1Result < 0)
       throw new DOMException(
-        'IndexSizeError',
         "Failed to execute 'createRadialGradient' on '" +
           this.constructor.name +
-          "': The r1 provided is less than 0."
+          "': The r1 provided is less than 0.",
+        'IndexSizeError'
       );
 
     const event = createCanvasEvent(
@@ -751,8 +751,8 @@ export default class CanvasRenderingContext2D {
     if (img instanceof ImageBitmap) {
       if (img._closed)
         throw new DOMException(
-          'InvalidStateError',
-          "DOMException: Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The image source is detached."
+          "DOMException: Failed to execute 'drawImage' on 'CanvasRenderingContext2D': The image source is detached.",
+          'InvalidStateError'
         );
       valid = true;
     }
@@ -869,21 +869,21 @@ export default class CanvasRenderingContext2D {
 
     if (Number(radiusX) < 0)
       throw new DOMException(
-        'IndexSizeError',
         "Failed to execute 'ellipse' on '" +
           this.constructor.name +
           "': The major-axis radius provided (" +
           radiusX +
-          ') is negative.'
+          ') is negative.',
+        'IndexSizeError'
       );
     if (Number(radiusY) < 0)
       throw new DOMException(
-        'IndexSizeError',
         "Failed to execute 'ellipse' on '" +
           this.constructor.name +
           "': The minor-axis radius provided (" +
           radiusY +
-          ') is negative.'
+          ') is negative.',
+        'IndexSizeError'
       );
 
     const event = createCanvasEvent('ellipse', getTransformSlice(this), {
@@ -1058,8 +1058,25 @@ export default class CanvasRenderingContext2D {
     return this._fontStack[this._stackIndex];
   }
 
-  getImageData() {
-    return new ImageData(this._canvas.width, this._canvas.height);
+  getImageData(x, y, w, h) {
+    if (arguments.length < 4)
+      throw new TypeError(
+        "Failed to execute 'getImageData' on '" +
+          this.constructor.name +
+          "': 4 arguments required, but only " +
+          arguments.length +
+          ' present.'
+      );
+    if (w == 0 || h == 0)
+      throw new DOMException(
+        "Failed to execute 'getImageData' on '" +
+          this.constructor.name +
+          "': The source " +
+          (w == 0 ? 'width' : 'height') +
+          ' is 0.',
+        'IndexSizeError'
+      );
+    return new ImageData(Math.abs(w), Math.abs(h));
   }
 
   getLineDash() {

@@ -1,7 +1,7 @@
 import CanvasRenderingContext2D from '../classes/CanvasRenderingContext2D';
 import WebGLRenderingContext from '../classes/WebGLRenderingContext';
 
-export default function mockPrototype() {
+export default function mockPrototype(win) {
   /**
    * This weakmap is designed to contain all of the generated canvas contexts. It's keys are the
    * jsdom canvases obtained by using the `this` keyword inside the `#getContext('2d')` function
@@ -13,7 +13,7 @@ export default function mockPrototype() {
    * value of getContext. It attempts to preserve the original getContext function by storing it on
    * the callback as a property.
    */
-  function getContext(type, options) {
+  const getContextMock = jest.fn(function getContext(type, options) {
     if (type === '2d') {
       /**
        * Contexts must be idempotent. Once they are generated, they should be returned when
@@ -29,12 +29,28 @@ export default function mockPrototype() {
       generatedContexts.set(this, ctx);
       return ctx;
     }
-    return getContext.internal.call(this, type, options);
+
+    // return getContext.internal.call(this, type, options);
+
+    try {
+      if (!this.dataset.internalRequireTest) require('canvas');
+    } catch {
+      return null;
+    }
+    return getContextMock.internal.call(this, type, options);
+  });
+
+  let htmlCanvasElementPrototype = HTMLCanvasElement.prototype;
+  if (win?.HTMLCanvasElement?.prototype) {
+    htmlCanvasElementPrototype = win?.HTMLCanvasElement?.prototype;
   }
 
-  getContext.internal = HTMLCanvasElement.prototype.getContext;
-
-  HTMLCanvasElement.prototype.getContext = getContext;
+  if (!jest.isMockFunction(htmlCanvasElementPrototype.getContext)) {
+    getContextMock.internal = htmlCanvasElementPrototype.getContext;
+  } else {
+    getContextMock.internal = htmlCanvasElementPrototype.getContext.internal;
+  }
+  htmlCanvasElementPrototype.getContext = getContextMock;
 
   /**
    * This function technically throws SecurityError at runtime, but it cannot be mocked, because
@@ -73,12 +89,12 @@ export default function mockPrototype() {
     setTimeout(() => callback(blob), 0);
   });
 
-  if (!jest.isMockFunction(HTMLCanvasElement.prototype.toBlob)) {
-    toBlobOverride.internal = HTMLCanvasElement.prototype.toBlob;
+  if (!jest.isMockFunction(htmlCanvasElementPrototype.toBlob)) {
+    toBlobOverride.internal = htmlCanvasElementPrototype.toBlob;
   } else {
-    toBlobOverride.internal = HTMLCanvasElement.prototype.toBlob.internal;
+    toBlobOverride.internal = htmlCanvasElementPrototype.toBlob.internal;
   }
-  HTMLCanvasElement.prototype.toBlob = toBlobOverride;
+  htmlCanvasElementPrototype.toBlob = toBlobOverride;
 
   /**
    * This section creates a dataurl with a validated mime type. This is not actually valid, because
@@ -103,10 +119,10 @@ export default function mockPrototype() {
     return 'data:' + type + ';base64,00';
   });
 
-  if (!jest.isMockFunction(HTMLCanvasElement.prototype.toDataURL)) {
-    toDataURLOverride.internal = HTMLCanvasElement.prototype.toDataURL;
+  if (!jest.isMockFunction(htmlCanvasElementPrototype.toDataURL)) {
+    toDataURLOverride.internal = htmlCanvasElementPrototype.toDataURL;
   } else {
-    toDataURLOverride.internal = HTMLCanvasElement.prototype.toDataURL.internal;
+    toDataURLOverride.internal = htmlCanvasElementPrototype.toDataURL.internal;
   }
-  HTMLCanvasElement.prototype.toDataURL = toDataURLOverride;
+  htmlCanvasElementPrototype.toDataURL = toDataURLOverride;
 }

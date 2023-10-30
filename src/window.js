@@ -77,7 +77,7 @@ export default (win) => {
   if (!win.WebGLTexture) win.WebGLTexture = function () {};
   if (!win.WebGLUniformLocation) win.WebGLUniformLocation = function () {};
 
-  mockPrototype();
+  mockPrototype(win);
 
   return win;
 };
