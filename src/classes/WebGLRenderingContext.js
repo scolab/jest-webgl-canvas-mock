@@ -65,7 +65,6 @@ const testFuncs = [
   'getRenderbufferParameter',
   'getShaderParameter',
   'getShaderInfoLog',
-  'getShaderPrecisionFormat',
   'getShaderSource',
   'getSupportedExtensions',
   'getTexParameter',
