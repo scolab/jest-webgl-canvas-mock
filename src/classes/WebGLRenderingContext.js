@@ -6,6 +6,7 @@ const testFuncs = [
   'bindFramebuffer',
   'bindRenderbuffer',
   'bindTexture',
+  'bindVertexArray',
   'blendColor',
   'blendEquation',
   'blendEquationSeparate',
@@ -30,6 +31,7 @@ const testFuncs = [
   'createRenderbuffer',
   'createShader',
   'createTexture',
+  'createVertexArray',
   'cullFace',
   'deleteBuffer',
   'deleteFramebuffer',
@@ -512,4 +514,6 @@ export default class WebGLRenderingContext {
       precision: 23,
     };
   }
+  get drawingBufferWidth() {}
+  get drawingBufferHeight() {}
 }
