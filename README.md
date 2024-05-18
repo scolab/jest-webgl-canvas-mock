@@ -1,6 +1,9 @@
 # jest-webgl-canvas-mock
 
-> Mock `canvas` and `WebGL` when run unit test cases with jest. For more browser environment, you can use [jest-electron](https://github.com/hustcc/jest-electron) for real browser runtime.
+> Mock `canvas` when run unit test cases with jest. For more browser environment.
+>
+> - [jest-random-mock](https://github.com/hustcc/jest-random-mock) Mock `Math.random` in jest, with deterministic random generator.
+> - [jest-date-mock](https://github.com/hustcc/jest-date-mock) Mock `Date` when run unit test with jest, test `Date` easily.
 
 [![Build Status](https://github.com/adamfsk/jest-webgl-canvas-mock/workflows/build/badge.svg)](https://github.com/adamfsk/jest-webgl-canvas-mock/actions/workflows/build.yml)
 [![npm](https://img.shields.io/npm/v/jest-webgl-canvas-mock.svg)](https://www.npmjs.com/package/jest-webgl-canvas-mock)
@@ -203,6 +206,9 @@ canvas.toDataURL.mockReturnValueOnce(
 - [@lekha](https://github.com/lekha)
 - [@yonatankra](https://github.com/yonatankra)
 - [@LitoMore](https://github.com/LitoMore)
+- [@danielrentz](https://github.com/danielrentz)
+- [@hrd543](https://github.com/hrd543)
+- [@pedroordep](https://github.com/pedroordep)
 
 ## License
 
