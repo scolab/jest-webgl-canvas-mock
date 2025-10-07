@@ -1,12 +1,9 @@
 {
-  "name": "jest-webgl-canvas-mock",
-  "version": "2.5.3",
+  "name": "@scolab/jest-webgl-canvas-mock",
+  "version": "2.5.3a",
   "description": "Mock both 2D and WebGL contexts in Jest.",
   "main": "lib/index.js",
   "types": "types/index.d.ts",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
-  },
   "scripts": {
     "test": "jest --no-cache",
     "build": "babel src --out-dir lib",

@@ -491,6 +491,12 @@ export default class WebGLRenderingContext {
       WebGLRenderingContext.prototype[key] = mockEnums[key];
     });
 
+    // This block starts custom Scolab code
+    WebGLRenderingContext.prototype.getProgramInfoLog = () =>
+      'WebGL 2.0 (OpenGL ES 3.0 Chromium)';
+    WebGLRenderingContext.prototype.getShaderInfoLog = () => 'Shader info log';
+    // Ends custom Scolab code
+
     this._canvas = canvas;
   }
 
